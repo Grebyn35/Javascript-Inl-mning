@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="components/styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="create_unfinished_task(), create_finished_task()">
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Logga in</button>
+    <button onclick="register()">Registrera</button>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+    <div id="content_container">
+        <div id="finish_task_header">
+          <p> TODO Lista </p>
+        </div>
+  
+        <div id="task_input_container">
+          <input id="input_box" type="text" placeholder="Task Titel"/>
+          <input id="input_date" type="text" placeholder="Task Data"/>
+          <button id="input_button" onclick="add_task();">
+            
+            Lägg till TODO <i class="fa fa-arrow-circle-right"></i>
+          </button>
+          <button id="input_button" onclick="logout()">Logga ut</button>
+        </div>
+  
+        <!-- TODO -->
+        <p class="header"> Pågående </p>
+        <div class="container">
+  
+  
+        </div>
+  
+  
+        <!-- Finished -->
+        <p class="header"> Färdiga </p>
+        <div class="container">
+  
+          <div class="task_container">
+            <div id="task_data">
+              <p id="task_title" contenteditable="false"> Task Title 1 </p>
+              <p id="task_date" contenteditable="false"> Task Date 1 </p>
+            </div>
+          </div>
+          <div class="task_container">
+            <div id="task_data">
+              <p id="task_title" contenteditable="false"> Task Title 1 </p>
+              <p id="task_date" contenteditable="false"> Task Date 1 </p>
+            </div>
+          </div>
+          <div class="task_container">
+            <div id="task_data">
+              <p id="task_title" contenteditable="false"> Task Title 1 </p>
+              <p id="task_date" contenteditable="false"> Task Date 1 </p>
+              
+            </div>
+            
+          </div>
+          
+        </div>
+  </div>
+  
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCSaQd5f5qpPF-zqoecOrFudh3fXBwqoSg",
+    authDomain: "myproject-14e19.firebaseapp.com",
+    databaseURL: "https://myproject-14e19.firebaseio.com",
+    projectId: "myproject-14e19",
+    storageBucket: "myproject-14e19.appspot.com",
+    messagingSenderId: "103769290098",
+    appId: "1:103769290098:web:a89a3ffe958da1e586d9eb",
+    measurementId: "G-LVVXSVZGSM"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
+</body>
+</html>
